@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <meta name="apple-touch-fullscreen", content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style", content="black" />
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+  <!-- iPad/iPhone specific css below, add after your main css >
+  <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+  -->
+  <script type="text/javascript" charset="utf-8" src="lib/cordova-1.5.0.js"></script>  
+  <script type="text/javascript" charset="utf-8" src="lib/underscore.js"></script>
+  <script type="text/javascript" charset="utf-8" src="lib/async.js"></script>
+  <script type="text/javascript" charset="utf-8" src="lib/zepto.js"></script>
+  <script type="text/javascript" charset="utf-8" src="lib/charlotte/shared.js"></script>
+  <script type="text/javascript" charset="utf-8" src="lib/charlotte/charlotte.js"></script>
+  <script type="text/javascript" charset="utf-8" src="boot.js"></script>
+
+
+  <script type="text/javascript" charset="utf-8">
+
+
+  // If you want to prevent dragging, uncomment this section
+  /*
+  function preventBehavior(e) 
+  { 
+    e.preventDefault(); 
+  };
+  document.addEventListener("touchmove", preventBehavior, false);
+  */
+
+  /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+  see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+  for more details -jm */
+  /*
+  function handleOpenURL(url)
+  {
+    // TODO: do something with the url passed in.
+  }
+  */
+
+  function onBodyLoad()
+  {		
+    document.addEventListener("deviceready",onDeviceReady,false);
+  }
+  
+  /* When this function is called, PhoneGap has been initialized and is ready to roll */
+  /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+  see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+  for more details -jm */
+  function onDeviceReady()
+  {
+    bootHtmlBundleFlow({
+      rootUrl: 'http://local.charlottedemo.com:3000/', 
+      assetRootUrl: 'http://local-assets.charlottedemo.com:3000/'
+    }, function(err) {
+      document.addEventListener("resume", refresh, false);
+    });
+  }
+
+  </script>
+  </head>
+  <body onload="onBodyLoad()">
+    <div id="tab-menu">
+      <div id="content" class="content-container"></div>      
+    </div>
+    <div id="home-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="users-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="foo-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="bar-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+  </body>
+</html>

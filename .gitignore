@@ -1,0 +1,8 @@
+.DS_Store
+xcode/charlotte_demo.xcodeproj/project.xcworkspace/
+xcode/charlotte_demo.xcodeproj/xcuserdata/
+xcode/www/lib/*
+xcode/www/boot.js
+node/logs
+node/views/versions
+.*~
