@@ -1,0 +1,17 @@
+- if (requestId)
+  - navBar.set({showCenterTabMenuLink: true})
+  - navBar.get().buttons = {left: {text: "Back"}}
+- else 
+  - navBar.set({buttons: {left: {href: "/tab_menu", text: "CD"}}});
+  
+h1= user.name
+
+h2 Posts by #{user.name}:
+ul
+  - each post in posts
+    li
+      a.post.show(href="/posts/#{post.id}")= post.title
+  
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', 'users/show');

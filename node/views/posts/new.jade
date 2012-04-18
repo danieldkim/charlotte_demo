@@ -1,0 +1,41 @@
+- if (requestId)
+  != partial('stylesheets')
+  
+#modal-form-container
+  form#modal-form(action=rootUrl+'posts', method="post", enctype="multipart/form-data")
+    #nav-bar
+      a#cancel.button.left(href=from) Cancel
+      - if (!isBlank('title'))
+        h1 #{title}
+      - else
+        h1 Footmarkz
+      button#done.button.right Done
+    #body-frame
+      #body
+        input(type="hidden", name="from", value=from)
+        input(type="hidden", name="fileUri", value=post.fileUri)
+        input(type="text", name="title", value=post.title, placeholder='Title for your post')
+        textarea(name="body", value=post.body, placeholder='Text of your post')
+        - if (inNativeApp)
+          button#add-photo.button Add Photo
+        - else if (NODE_ENV == 'development') 
+          label Add Photo
+            input(name="image", type="file")
+            
+      != partial('messages/index')
+
+script(type="text/javascript")
+  // the code below could be simplified with just:
+  // charlotte.ready('#{requestId}', 'posts/new');
+  charlotte.ready('#{requestId}', function(callback) {
+    this.require(
+      {
+        dependencies: ['posts/new']
+      }, 
+      function(err, postsNew) {
+        if (err) return callback(err);
+        postsNew.call(this, callback);
+      });
+  });
+
+!= partial('scripts')

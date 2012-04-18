@@ -1,0 +1,21 @@
+- if (requestId)
+  != partial('stylesheets')
+
+#nav-bar
+  != partial('nav_bar_button', {location: 'left'})
+  - if (!isBlank('title'))
+    h1 #{title}
+  - else
+    h1 Charlotte Demo
+  != partial('nav_bar_button', {location: 'right'})
+  - var navBarProp = navBar.get()
+  - if (navBarProp && navBarProp.showCenterTabMenuLink)
+    a#tab-menu-button(href="/tab_menu") ➧
+
+#body-frame
+  #body
+    !=body
+
+  != partial('messages/index')
+  
+!= partial('scripts')

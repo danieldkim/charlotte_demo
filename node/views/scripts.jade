@@ -1,0 +1,11 @@
+- var scriptUrls = [ "/lib/charlotte/page_transitions", "/lib/firmin", "/lib/common/common", "/lib/iscroll" ];
+- if (pageScripts.get()) {
+-   scriptUrls = scriptUrls.concat(pageScripts.get())
+- }
+!= javascripts.apply(this, scriptUrls)
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', function(callback) {
+    $('#body-frame', this.container).height(window.innerHeight - 40);
+    callback();
+  });

@@ -1,0 +1,18 @@
+#messages{
+  position: absolute;
+  bottom: -82px;
+  margin: 0;
+  height: 62px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: rgba(66, 66, 66, 0.6);
+  color: white;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.6) 0px 0px 5px 0px;
+  -webkit-transition: all .3s ease-in;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#messages.display {
+  -webkit-transform: translate3d(0, -82px, 0);
+}

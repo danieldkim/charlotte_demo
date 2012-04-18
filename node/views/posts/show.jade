@@ -1,0 +1,23 @@
+- pageStylesheets.set(['/posts/show'])
+
+- if (requestId)
+  - navBar.set({showCenterTabMenuLink: true})
+  - navBar.get().buttons = {left: {text: "Back"}}
+- else 
+  - navBar.set({buttons: {left: {href: "/tab_menu", text: "CD"}}});
+
+- navBar.get().buttons.right = {href: "/posts/new", text: '\u271A'};
+
+- if (viewOnly)
+  h1 Gimme a sec ...
+- else 
+  h1.post-title= post.title
+
+  p
+    = 'by '
+    a.user.show(href="/users/#{post.user.id}")= post.user.name
+  
+  p= post.body
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', 'posts/show');

@@ -1,0 +1,10 @@
+- var navBarProp = navBar.get(), button;
+- if (navBarProp && navBarProp.buttons)
+  - button = navBarProp.buttons[location];
+  - if (button)
+    - if (button.text)
+      a(class="button #{location}", href=button.href)= button.text
+    - if (button.imgSrc)
+      a(class="button #{location} icon", href=button.href)
+        != img({src:button.imgSrc})
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <meta name="apple-touch-fullscreen", content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style", content="black" />
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  
+  <script type="text/javascript" src="/lib/underscore.js"></script>
+  <script type="text/javascript" src="/lib/async.js"></script>
+  <script type="text/javascript" src="/lib/zepto.js"></script>
+  <script type="text/javascript" src="/lib/charlotte/shared.js"></script>
+  <script type="text/javascript" src="/lib/charlotte/charlotte.js"></script>
+  <script type="text/javascript" src="/boot.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  function onBodyLoad() {
+    bootHtmlBundleFlow({
+      rootUrl: '/', 
+      assetRootUrl: 'http://local-assets.charlottedemo.com:3000/'
+    });
+    $('body').keyup(function(e) { 
+      if (e.ctrlKey && e.keyCode == 82) {
+        refresh();
+      }
+    });
+  }  
+  </script>
+  <title>Charlotte Demo (html bundle mode)</title>
+  </head>
+  <body onload="onBodyLoad()">
+    <div id="tab-menu">
+      <div id="content" class="content-container"></div>      
+    </div>
+    <div id="home-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="users-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="foo-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+    <div id="bar-tab" class="tab">
+      <div id="content" class="content-container"></div>
+    </div>
+  </body>
+</html>

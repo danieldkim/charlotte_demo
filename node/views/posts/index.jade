@@ -1,0 +1,16 @@
+- var buttons = {};  
+- buttons.left = {href: "/tab_menu", text: "CD"};
+- buttons.right = {href: "/posts/new", text: '\u271A'};
+- navBar.set({buttons: buttons});
+
+- if (viewOnly)
+  p
+    em Loading posts ...
+- else if (requestId)
+  button#refresh-button Refresh
+
+#posts-container
+  != partial('posts/posts', {posts: posts})
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', 'posts/index');

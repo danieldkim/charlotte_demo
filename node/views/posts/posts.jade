@@ -1,0 +1,5 @@
+ul
+  - each post in posts
+    li
+      a.post.show(href="/posts/#{post.id}")= post.title
+      = ' (' + post.rating.toFixed(3) + ')'

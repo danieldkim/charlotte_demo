@@ -1,0 +1,14 @@
+- navBar.set({buttons: {left: {href: "/tab_menu", text: "CD"}}});
+
+- if (viewOnly)
+  p
+    em Loading users ...
+    
+ul
+  - each user in users
+    li
+      a.user.show(href="/users/#{user.id}")= user.name
+      = ' (' + user.rating.toFixed(3) + ')'      
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', 'users/index');      

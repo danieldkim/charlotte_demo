@@ -1,0 +1,25 @@
+!= stylesheets("messages/index")
+
+#messages
+  each typeMessages, type in messages
+    ul(class=type)
+      - each message in typeMessages
+        li= message
+    
+  - if ('undefined' !== typeof errors && errors.length)
+    ul#errors
+      - each error in errors
+        li.error= error
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', function(callback) {
+    var messages = $('#messages', this.container);
+    if (messages.html()) {
+      messages.addClass('display');
+      setTimeout(function() { 
+        messages.removeClass('display');
+        messages.html('');
+      }, 3000);
+    }
+    callback();
+  });

@@ -1,0 +1,42 @@
+- pageStylesheets.set(['/tab_menu/show'])
+!= partial('stylesheets')
+
+#nav-bar
+
+#body-frame
+ #body
+    #menu-items
+
+      .menu-item-row
+  
+        a#home.menu-item(href="/") 
+          .container
+            .content
+              .icon icon goes here
+              .text Home
+
+        a#users.menu-item(href="/users") 
+          .container
+            .content
+              .icon icon goes here
+              .text Users
+
+      .menu-item-row
+  
+        a#foo.menu-item(href="/foo")
+          .container
+            .content
+              .icon icon goes here
+              .text Foo
+
+        a#bar.menu-item(href="/bar")
+          .container
+            .content
+              .icon icon goes here
+              .text Bar
+
+!= partial('scripts')
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', 'tab_menu/show');
+

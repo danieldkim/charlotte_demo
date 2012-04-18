@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font: 13px Verdana, Verdana, Geneva, sans-serif;
+  text-align:center;  
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:.50;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.fade-in {
+  -webkit-animation-name: fade-in;
+  -webkit-animation-duration: .5s;
+}
+
+.content-container { 
+  margin: 0 0;
+}
+
+#nav-bar {
+  margin: 0;
+  height: 40px; width: 100%; position: absolute;
+  opacity: 1;
+  background: #424242;
+  color: white;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+}
+
+#nav-bar .button {
+  position: absolute;
+  top: 5px;
+  width: auto;
+  font-size: 12px;
+  border: solid 1px;
+  -webkit-border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+  line-height:27px; 
+  overflow: hidden;
+  padding:0 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  border-color:#9599a1 #a8abb4 #acb1bb;
+}
+
+#nav-bar .button.left {
+  left: 5px;
+}
+
+#nav-bar .button.right {
+  right: 5px;
+}
+
+#nav-bar .button.icon {
+  vertical-align: middle;
+  padding: 2px 4px;
+  line-height: 24px; 
+}
+
+#nav-bar .button.icon img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+#nav-bar h1 {
+  display: inline;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: #333 1px 1px 4px;  
+}
+
+#nav-bar #tab-menu-button {
+  text-decoration: none;
+  position: absolute;
+  font-size: 20px;
+  line-height: 10px;
+  bottom: 2px;
+  -webkit-transform: rotate(90deg);
+  left: 50%;
+  color: white;
+}
+
+#body-frame {
+  width: 100%; 
+  position: absolute; 
+  overflow: hidden;
+  top: 40px; 
+  margin: 0;
+  height: 440px;
+  background: url('/lib/common/grey-texture-tile.png');
+}
+
+#body {
+  margin: 0 0;  
+}
+
+#modal-form {
+  position:relative;
+}
+
+#modal-form-container {
+  width: 100%;
+}
+
+#modal-form-container form input[type=text], textarea {
+  display:block;
+  width: 90%;
+  -webkit-border-radius: 0px;
+  font-size: 18px;
+  border-top: thin solid gray;
+  border-bottom: 0;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#modal-form-container form input {
+  height: 40px;
+}
+
+#modal-form-container form textarea {
+  height: 100px;
+}
+
+.button {
+  -webkit-border-radius: 5px;
+  margin: auto;
+  padding: 5px 2px;
+  display: block;
+  color: #000;
+  text-shadow: #333 1px 1px 4px;
+  text-decoration: none;
+  clear: both;
+  text-align: center;
+  width: 62%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-align: left;
+}
+
+#loading-overlay {
+  -webkit-border-radius: 4px;
+  position: absolute;
+  width: 60%;
+  top: 0;
+  bottom : 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.618);
+  height: 100px;
+  line-height: 100px;
+  z-index: 10;
+  color: white;
+  font-size: 14px;
+}

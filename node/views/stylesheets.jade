@@ -1,0 +1,6 @@
+- var stylesheetUrls = ['/lib/common/common'];
+- if (pageStylesheets.get()) {
+-   stylesheetUrls = stylesheetUrls.concat(pageStylesheets.get());
+- }
+
+!= stylesheets.apply(this, stylesheetUrls)

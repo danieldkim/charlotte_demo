@@ -1,0 +1,7 @@
+div(style="text-align:left") Something went wrong.
+  p Message:
+  pre #{error.message}
+  - if (error.stack)
+    p Stack:
+    pre= error.stack
+    

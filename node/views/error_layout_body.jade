@@ -1,0 +1,28 @@
+- if (requestId)
+  != partial('stylesheets')
+
+#nav-bar
+  - if (requestId)
+    - navBar.set({buttons: {left: {text: "Back"}}})
+  != partial('nav_bar_button', {location: 'left'})
+  - if (!isBlank('title'))
+    h1 #{title}
+  - else
+    h1 Error (#{status})
+  != partial('nav_bar_button', {location: 'right'})
+
+#body-frame
+  #body
+    !=body
+
+script(type="text/javascript")
+  charlotte.ready('#{requestId}', function() {
+    var self = this,
+        container = this.container;
+    if (container) {
+      $(this.contentContainer, container).on('click', '#nav-bar .button.left', function(e) {
+        e.preventDefault();
+        self.back();
+      });
+    }
+  });
