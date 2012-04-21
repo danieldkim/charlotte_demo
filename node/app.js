@@ -16,7 +16,7 @@ function NotFound(msg){
 }
 
 app.configure(function(){
-  // charlotte.version = "1.0";
+  charlotte.version = "1.0";
   app.use(logging.requestLogger);
   app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With');
