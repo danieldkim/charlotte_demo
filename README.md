@@ -41,7 +41,9 @@ and native environment. It allows us to simulate in a desktop browser our app
 running on PhoneGap, sans the device API's. Since a significant portion of our
 app functionality will not rely on the device API's it's worth creating this
 file so that we can develop and debug using the tools available in desktop
-browsers.  To load it, just go to http://local.charlottedemo.com:3000/ in Chrome or Safari
+browsers. To load it, just go to
+[http://local.charlottedemo.com:3000/_index.html](http://local.charlottedemo.com:3000/_index.html)
+in Chrome or Safari.
 
 # The Native App
 
