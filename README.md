@@ -41,11 +41,9 @@ and native environment. It allows us to simulate in a desktop browser our app
 running on PhoneGap, sans the device API's. Since a significant portion of our
 app functionality will not rely on the device API's it's worth creating this
 file so that we can develop and debug using the tools available in desktop
-browsers.
+browsers.  To load it, just go to http://local.charlottedemo.com:3000/ in Chrome or Safari
 
 # The Native App
-
-# Enable Versioning/Caching
 
 # The Tab Menu
 
@@ -72,6 +70,8 @@ It is up to your discretion how you implement conditional presentation logic
 for normal vs. html bundle mode. There's no reason we *can't* show a back
 button all the time, we just *shouldn't*. We'd also have to do extra work to
 make sure the href gets set with the proper value.
+
+# Form Submissions and Flash Messages
 
 # Other Things to Point Out
 
