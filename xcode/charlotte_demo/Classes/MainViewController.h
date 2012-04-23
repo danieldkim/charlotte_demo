@@ -19,9 +19,9 @@
 
 //
 //  MainViewController.h
-//  charlotte_demo
+//  FooFoo
 //
-//  Created by Daniel Kim on 4/13/12.
+//  Created by Daniel Kim on 4/23/12.
 //  Copyright __MyCompanyName__ 2012. All rights reserved.
 //
 
