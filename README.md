@@ -1,3 +1,6 @@
+
+# Update: This demo is way out of date with the current state of Charlotte. Will update when I get a chance.
+
 # Introduction
 
 This is a demo app. Please refer to the [charlotte][] documentation for the
